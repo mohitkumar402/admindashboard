@@ -1,0 +1,107 @@
+.sidebar {
+  width: 250px;
+  background-color: #ffffff; /* ✅ Changed background from blue to white */
+  color: rgb(219, 211, 211);
+  height: 100vh;
+  padding: 1rem;
+  position: fixed;
+  transition: width 0.3s ease;
+  overflow-y: auto;       /* ✅ Scroll only vertically */
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #999 #e9ebed;
+  scroll-behavior: smooth; /* ✅ Smooth scrolling */
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+/* Scrollbar styling for Webkit (Chrome, Edge, Safari) */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 3px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #e9ebed;
+}
+
+.toggle-btn {
+  background: #374151;
+  color: white;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.toggle-btn.collapsed {
+  transform: rotate(180deg);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-section {
+  margin-bottom: 1.2rem;
+}
+
+.sidebar-section h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.sidebar-section a {
+  display: flex;
+  align-items: center;
+  color: #374151;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  gap: 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.sidebar-section a span {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.sidebar-section a:hover {
+  color: white;
+  background-color: #374151;
+}
+
+.sidebar-section a.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+.sidebar.collapsed .sidebar-section a {
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+.sidebar.collapsed .sidebar-section h4 {
+  display: none;
+}
+
+/* Mobile support */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    height: 100vh; /* ✅ Ensures full height on mobile too */
+  }
+}

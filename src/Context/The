@@ -1,0 +1,51 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+const ThemeContext = createContext();
+
+export const ThemeProvider = ({ children }) => {
+  const [currentColor, setCurrentColor] = useState('#03C9D7'); // Default color (cyan)
+  const [currentMode, setCurrentMode] = useState('Light');      // 'Light' or 'Dark'
+  const [activeMenu, setActiveMenu] = useState(true);           // Sidebar visibility
+  const [themeSettings, setThemeSettings] = useState(false);    // To open/close settings panel (optional)
+  
+  // Save theme preference to localStorage
+  useEffect(() => {
+    const savedColor = localStorage.getItem('colorMode');
+    const savedMode = localStorage.getItem('themeMode');
+    if (savedColor) setCurrentColor(savedColor);
+    if (savedMode) setCurrentMode(savedMode);
+  }, []);
+
+  const setMode = (e) => {
+    const mode = e.target.value;
+    setCurrentMode(mode);
+    localStorage.setItem('themeMode', mode);
+  };
+
+  const setColor = (color) => {
+    setCurrentColor(color);
+    localStorage.setItem('colorMode', color);
+  };
+
+  return (
+    <ThemeContext.Provider
+      value={{
+        currentColor,
+        currentMode,
+        activeMenu,
+        themeSettings,
+        setCurrentColor,
+        setCurrentMode,
+        setActiveMenu,
+        setThemeSettings,
+        setMode,
+        setColor,
+      }}
+    >
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+// ✅ Custom hook to use the context easily
+export const useStateContext = () => useContext(ThemeContext);

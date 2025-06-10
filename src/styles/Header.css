@@ -1,0 +1,177 @@
+:root {
+  --bg-light: #ffffff;
+  --text-light: #222;
+  --bg-dark: #fcf5fcfc;
+  --text-dark: #f0f0f0;
+}
+
+body[data-theme='light'] {
+  background: var(--bg-light);
+  color: var(--text-light);
+}
+body[data-theme='dark'] {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body {
+  transition: background 0.4s ease, color 0.4s ease;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  padding: 8px 16px; /* ✅ Reduced padding for normal height */
+  background: var(--bg-dark);
+  border-bottom: 2px solid #e3ce10de;
+  box-shadow: 0 4px 12px rgba(13, 118, 167, 0.4);
+  transition: background 0.3s ease;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-title {
+  font-size: 1.5rem; /* ✅ Slightly reduced for compactness */
+  font-weight: 700;
+  position: relative;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 106, 0, 0.2), 
+               0 0 20px rgba(139, 6, 187, 0.3);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #8b06bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.header-title:hover .gradient-text {
+  transform: scale(1.05);
+}
+
+.hover-underline {
+  height: 3px; /* ✅ thinner underline */
+  width: 0%;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #8b06bb);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.4s ease;
+  border-radius: 10px;
+}
+
+.header-title:hover .hover-underline {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap; /* ✅ Wrap for smaller screens */
+}
+
+.nav-links a,
+.dropdown-toggle,
+.theme-toggle {
+  color: #ccc;
+  background: #5e105bfc;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav-links a:hover,
+.dropdown-toggle:hover,
+.theme-toggle:hover {
+  color: #fff;
+  text-shadow: 0 0 6px #ff6a00;
+}
+
+.nav-links a::after,
+.dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, #ff6a00, #ee0979, #8b06bb);
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.dropdown-toggle:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  color: #eee;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #333;
+}
+
+/* ✅ Fix for smaller screens: prevent dropdown overflow */
+@media (max-width: 500px) {
+  .dropdown-menu {
+    right: auto;
+    left: 0;
+    min-width: 100%;
+  }
+}
+
+/* Responsive for header and nav */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .nav-links {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}

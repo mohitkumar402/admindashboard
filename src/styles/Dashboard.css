@@ -1,0 +1,363 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 3rem;/* Adjusted to account for header height */
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 70px; /* Adjusted to account for header height */
+  background-color: #ffffff;
+  color: white;
+  padding: 1rem;
+  z-index: 100;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+  min-width: 70px;
+}
+/* ✅ Outer Container with Rounded Rectangle */
+.section-container.rounded-scroll-container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Section Title Styling */
+.section-container .section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* ✅ Horizontally Scrollable Container */
+.scroll-x-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scrollbar-width: thin;
+}
+
+.scroll-x-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-x-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #888, #555);
+  border-radius: 10px;
+}
+
+/* ✅ Individual Widget Cards Styling */
+.scroll-x-container .widget-card {
+  min-width: 240px;
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-x-container .widget-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+.dashboard-container {
+  margin-left: 250px;
+  top: 250px; /* Adjusted to account for header height */
+  width: calc(100vw - 250px);
+  min-height: 100vh;
+  background: linear-gradient(to right, #767676, #8baede);
+  padding: 1rem 2rem;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.sidebar.collapsed ~ .dashboard-container {
+  margin-left: 70px;
+  width: calc(100vw - 70px);
+}
+
+.dashboard-container > * {
+  margin-bottom: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  top: 120px; /* Adjusted to account for header height */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  scrollbar-color: #888 #f0f0f0;
+
+  scrollbar-width: thin;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #888, #555);
+  border-radius: 10px;
+}
+
+.widget-card, .chart-card,  .monthly-earnings {
+  min-width: 280px;
+  flex: 1;
+  background: #ebe9e9;
+  border-radius: 8px;
+  background: #f211d4;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.revenue-card {
+  min-width: 80px;
+  max-width: 300px;
+  background: #2ff76b;
+  border-radius: 8px;
+  flex: 1;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+}
+.monthly-loss{
+  min-width: 80px;
+  max-width: 300px;
+  background: #f211d4;
+  border-radius: 8px;
+  flex: 1;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.ecommerce-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.earnings-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.earnings-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.earnings-title {
+  font-weight: bold;
+  color: #666;
+}
+
+.earnings-amount {
+  font-size: 1.8rem;
+}
+
+.earnings-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  padding: 0.8rem;
+  border: none;
+}
+
+.btn-primary {
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.earning-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.earning-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 220px;
+}
+
+.earning-card-icon {
+  font-size: 1.5rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  border: none;
+}
+
+.earning-card-amount {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.earning-card-percentage {
+  margin-left: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.section-title {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.revenue-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.revenue-tags {
+  display: flex;
+  gap: 1rem;
+}
+
+.revenue-expense {
+  display: flex;
+  align-items: center;
+  color: gray;
+}
+
+.revenue-budget {
+  display: flex;
+  align-items: center;
+  color: green;
+}
+
+.monthly-earnings {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  width: 350px;
+}
+.section-container {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.scroll-x {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-behavior: smooth;
+}
+
+.scroll-x::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #666, #333);
+  border-radius: 10px;
+}
+
+.hover-transition {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-transition:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.unified-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.inbox-card {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1 1 200px;
+  min-width: 200px;
+  transition: background 0.3s;
+}
+.inbox-card:hover {
+  background: #e0e0e0;
+}
+
+.earnings-section .earning-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.earnings-section .earning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.amount {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.grid-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown {
+  width: 120px;
+  border: 1px solid #ccc;
+  padding: 0.4rem;
+  border-radius: 6px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    width: 70px;
+    min-width: 70px;
+  }
+  .dashboard-container {
+    margin-left: 0;
+    width: 100vw;
+  }
+}

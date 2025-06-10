@@ -1,0 +1,35 @@
+.calendar-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.fc .fc-button {
+  background-color: var(--primary);
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  margin: 2px;
+  cursor: pointer;
+  color: white;
+}
+
+.fc .fc-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.fc-toolbar-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.fc-event {
+  font-size: 0.9rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+}
