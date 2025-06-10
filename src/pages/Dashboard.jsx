@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
-import { FiDollarSign, FiUsers, FiBox, FiTrendingUp, FiRepeat } from "react-icons/fi";
+import { FiDollarSign, FiUsers, FiBox, FiTrendingUp, FiRepeat, FiCheckSquare, FiPhoneCall } from "react-icons/fi";
 import { GoDotFill } from 'react-icons/go';
 
 import Sidebar from '../components/Sidebar';
@@ -63,7 +63,7 @@ const Dashboard = () => {
   <div className="dashboard-container">
   <h1 className="dashboard-title">Admin Dashboard</h1>
 
-  {/* ✅ Unified Roll Container */}
+  {/*  Unified Roll Container */}
   <div className="section-container rounded-scroll-container">
     <h2 className="section-title">Quick Stats</h2>
 
@@ -80,8 +80,8 @@ const Dashboard = () => {
 
         {/* Inboxes/Phones - Unified Section */}
         <div className="section-container unified-section">
-          <h2>Inboxes/Phones (Unified)</h2>
-         
+          <h2>Inboxes/Phones</h2>
+         <break>  </break>
             <div className="unified-card hover-transition">
               <div className="unified-card-icon" style={{ backgroundColor: currentColor }}>
                 <FiUsers />
@@ -99,20 +99,27 @@ const Dashboard = () => {
             </div>
              <div className="unified-card hover-transition">
                <div className="unified-card-icon" style={{ backgroundColor: currentColor }}>
-                <fic />
+                <FiCheckSquare />
    </div>
-   <p className="unified-card-title">Customer Inboxes</p>
-   <p className="unified-card-value">1,234</p>
+   <p className="unified-card-title">Customer mails</p>
+   <p className="unified-card-value">1,23400</p>
  </div>
  <div className="unified-card hover-transition">
    <div className="unified-card-icon" style={{ backgroundColor: currentColor }}>
-     <FiBox />
+     <FiPhoneCall />
    </div>
-   <p className="unified-card-title">Product Phones</p>
-   <p className="unified-card-value">567</p>
+   <p className="unified-card-title"> Phones</p>
+   <p className="unified-card-value">5670</p>
+
  
  </div>
-           
+   <div className="unified-card hover-transition">
+   <div className="unified-card-icon" style={{ backgroundColor: currentColor }}>
+      <FiPhoneCall />
+      </div>
+      <p className="unified-card-title">Phones</p>
+      <p className="unified-card-value">5670</p>
+      </div>        
         </div>
 
         {/* Earnings Section */}
@@ -158,6 +165,8 @@ const Dashboard = () => {
           <div className="chart-card hover-transition"><BarChart /></div>
           <div className="chart-card hover-transition"><PieChart /></div>
           <div className="chart-card hover-transition"><AreaChart /></div>
+          <div className="chart-card hover-transition"><LineChart /></div>
+          <div className="chart-card hover-transition"><BarChart /></div>       
         </div>
 
         {/* Revenue Updates Section */}
@@ -191,27 +200,46 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="revenue-amount">
-        <p className="amount">$12,345.67</p>
+        <p className="amount">$168,345.67</p>
         <p className="revenue-desc">Total loss this month</p>
           </div>
         </div>
       <div className="revenue-card hover-transition">
   <div className="revenue-header">
-    <p className="revenue-title">loss amount</p>
+    <p className="revenue-title">gain amount</p>
     <div className="revenue-tags">
       <p className="revenue-expense"><GoDotFill /> Total loss</p>
       <p className="revenue-budget"><GoDotFill /> Budget</p>
     </div>
   </div>
   <div className="revenue-amount">
-    <p className="amount">$12,345.67</p>
+    <p className="amount">$168,345.67</p> 
+    <p className="revenue-desc">Total gain this month</p>
+  </div>
+  <div className="revenue-amount">
+    <p className="amount">$12,2566.52</p>
     <p className="revenue-desc">Total loss this month</p>
       </div>
-      
 
-      
-      
     </div>
     </div>
 
-   
+        {/* Quick Stats */}
+        
+        <div className="section-container quick-stats grid-container">
+          <h2 className="section-title">Quick Stats</h2>
+          <div className="grid-card hover-transition"><h3>Total Sales</h3><p>1,234 this month</p></div>
+          <div className="grid-card hover-transition"><h3>Active Users</h3><p>1,234 this month</p></div>
+          <div className="grid-card hover-transition"><h3>Orders Processed</h3><p>1,234 this month</p></div>
+          <div className="grid-card hover-transition"><h3>Support Tickets</h3><p>320 this week</p></div>
+          <div className="grid-card hover-transition"><h3>New Users</h3><p>320 this week</p></div>
+          <div className="grid-card hover-transition"><h3>Pending Orders</h3><p>56 orders</p></div>
+          <div className="grid-card hover-transition"><h3>Revenue Growth</h3><p>+18% from last month</p></div>
+          <div className="grid-card hover-transition"><h3>Refund Requests</h3><p>12 pending</p></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

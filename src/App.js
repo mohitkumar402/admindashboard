@@ -5,7 +5,7 @@ import Calendar from './pages/Calendar';
 import Kanban from './pages/Kanban';
 import Topbar from './components/Header'; // Only keeping Topbar globally now
 import './App.css';
-
+import Sidebar from './components/Sidebar';
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 

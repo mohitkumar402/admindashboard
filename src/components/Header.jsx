@@ -29,7 +29,7 @@ export default function Header() {
     >
       <div className="header-inner">
         <h1 className="header-title">
-          <span className="gradient-text">Admin Dashboard</span>
+          <Link to="/" className="gradient-text">Admin Dashboard</Link>
           <div className="hover-underline"></div>
         </h1>
 
