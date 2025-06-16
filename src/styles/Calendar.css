@@ -1,11 +1,19 @@
 .calendar-container {
-  background: white;
-  padding: 20px;
+  background: rgb(97, 146, 156);
+  display: flex;
+  padding: 0px 20px 60px 230px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(238, 21, 21, 0.1);
   margin-top: 20px;
 }
-
+.headerh1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #10bcec;
+  margin-bottom: 20px;
+  text-align: center;
+  
+}
 .fc .fc-button {
   background-color: var(--primary);
   border: none;

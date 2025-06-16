@@ -19,18 +19,19 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .header {
-  position: fixed;
-  width: 100%;
+  position: sticky;
   top: 0;
   z-index: 99;
-  padding: 8px 16px; /* ✅ Reduced padding for normal height */
+  padding: 10px 10px;
   background: var(--bg-dark);
+  text-align: center;
   border-bottom: 2px solid #e3ce10de;
   box-shadow: 0 4px 12px rgba(13, 118, 167, 0.4);
   transition: background 0.3s ease;
+  
 }
+
 
 .header-inner {
   display: flex;
@@ -40,16 +41,16 @@ body {
 }
 
 .header-title {
-  font-size: 1.5rem; /* ✅ Slightly reduced for compactness */
+  font-size: 1.5rem;
   font-weight: 700;
   position: relative;
   color: #fff;
-  text-shadow: 0 0 10px rgba(255, 106, 0, 0.2), 
-               0 0 20px rgba(139, 6, 187, 0.3);
+  text-shadow: 0 0 10px rgba(179, 81, 11, 0.2), 
+               0 0 20px rgba(187, 223, 27, 0.3);
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #ff6a00, #ee0979, #8b06bb);
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #67d40d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease;
@@ -60,7 +61,7 @@ body {
 }
 
 .hover-underline {
-  height: 3px; /* ✅ thinner underline */
+  height: 3px;
   width: 0%;
   background: linear-gradient(90deg, #ff6a00, #ee0979, #8b06bb);
   position: absolute;
@@ -77,25 +78,34 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap; /* ✅ Wrap for smaller screens */
+  gap: 14px;
+       /* ✅ Wrap to next line if space is less */
+  max-width: 100%;     /* ✅ Prevent overflow */
+  overflow-x: auto;    /* ✅ Allow horizontal scroll as backup on small screens */
+  padding: 8px 0;
+   /* Firefox */
 }
 
 .nav-links a,
 .dropdown-toggle,
 .theme-toggle {
-  color: #ccc;
-  background: #5e105bfc;
+  color: #efeeee;
+  background: #fb1df4fc;
   border: none;
   cursor: pointer;
   font-weight: 500;
   font-size: 1rem;
   display: flex;
+  height: 36px;
+  min-width: 70px; /* ✅ Ensure buttons have a minimum width */
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 6px 10px;
   border-radius: 4px;
   transition: color 0.3s ease, background 0.3s ease;
+  max-width: 100%;      /* ✅ Prevent buttons from growing too wide */
+  white-space: nowrap;  /* ✅ Prevent text from wrapping inside button */
 }
 
 .nav-links a:hover,
@@ -155,15 +165,9 @@ body {
 }
 
 /* ✅ Fix for smaller screens: prevent dropdown overflow */
-@media (max-width: 500px) {
-  .dropdown-menu {
-    right: auto;
-    left: 0;
-    min-width: 100%;
-  }
-}
 
-/* Responsive for header and nav */
+
+/* Responsive for header and nav on tablets/mobiles */
 @media (max-width: 768px) {
   .header-inner {
     flex-direction: column;
@@ -173,5 +177,14 @@ body {
   .nav-links {
     justify-content: flex-start;
     width: 100%;
+  }
+}
+
+/*  Further enhancement for very small screens: stack buttons vertically */
+@media (max-width: 400px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
   }
 }

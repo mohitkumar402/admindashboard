@@ -5,6 +5,10 @@ const data = [
   { name: 'Mon', value: 300 },
   { name: 'Tue', value: 700 },
   { name: 'Wed', value: 500 },
+  { name: 'Thu', value: 800 },
+  { name: 'Fri', value: 600 },
+  { name: 'Sat', value: 900 },
+  { name: 'Sun', value: 1200 }
 ];
 
 const BarChartComp = () => (

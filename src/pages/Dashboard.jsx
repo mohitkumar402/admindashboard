@@ -1,15 +1,19 @@
 import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
-import { FiDollarSign, FiUsers, FiBox, FiTrendingUp, FiRepeat, FiCheckSquare, FiPhoneCall } from "react-icons/fi";
+import { FiDollarSign, FiUsers,FiAlertCircle, FiBox, FiTrendingUp, FiRepeat, FiCheckSquare, FiPhoneCall } from "react-icons/fi";
 import { GoDotFill } from 'react-icons/go';
 
-import Sidebar from '../components/Sidebar';
+
 import WidgetCard from "../components/Cards/WidgetCard";
 import LineChart from "../components/charts/LineChart";
 import BarChart from "../components/charts/BarChart";
 import PieChart from "../components/charts/PieChart";
 import AreaChart from "../components/charts/AreaChart";
-
+import StackedChart from '../components/charts/StackedCharts';
+//import PyramidChart from '../components/charts/PyramidChart';
+//import RadarChartComp from '../components/charts/RAdarChart';
+//import HeatmapChart from '../components/charts/Heatmap';
+//import treeMapChart from '../components/charts/Treemap';
 import { useStateContext } from '../Context/ThemeContext';
 
 import '../styles/Dashboard.css';
@@ -57,17 +61,18 @@ const Dashboard = () => {
   const { currentColor } = useStateContext();
 
   return (
-    <div className="dashboard-layout">
-      <Sidebar />
+    
+      
 
   <div className="dashboard-container">
-  <h1 className="dashboard-title">Admin Dashboard</h1>
+  <h1 className="dashboard-title"></h1>
 
   {/*  Unified Roll Container */}
   <div className="section-container rounded-scroll-container">
     <h2 className="section-title">Quick Stats</h2>
 
     <div className="scroll-x-container">
+      
       <WidgetCard icon={<FiDollarSign />} label="Total Revenue" value="$1,20,000" />
       <WidgetCard icon={<FiDollarSign />} label="Earnings" value="$63,448.78" />
       <WidgetCard icon={<FiUsers />} label="Customers" value="39,354" />
@@ -117,10 +122,20 @@ const Dashboard = () => {
    <div className="unified-card-icon" style={{ backgroundColor: currentColor }}>
       <FiPhoneCall />
       </div>
-      <p className="unified-card-title">Phones</p>
-      <p className="unified-card-value">5670</p>
+      <p className="unified-card-title">Tweets</p>
+      <p className="unified-card-value">567</p>
       </div>        
-        </div>
+        
+
+          <div className="unified-card hover-transition">
+            <div className="unified-card-icon" style={{ backgroundColor: currentColor }}>
+              <FiAlertCircle />
+            </div>
+            <p className="unified-card-title">Customer Complaints</p>
+            <p className="unified-card-value">1,234</p>
+          </div>
+          </div>
+          
 
         {/* Earnings Section */}
         <div className="section-container earnings-section">
@@ -166,20 +181,28 @@ const Dashboard = () => {
           <div className="chart-card hover-transition"><PieChart /></div>
           <div className="chart-card hover-transition"><AreaChart /></div>
           <div className="chart-card hover-transition"><LineChart /></div>
-          <div className="chart-card hover-transition"><BarChart /></div>       
+          <div className="chart-card hover-transition"><BarChart /></div>
+          <div className="chart-card hover-transition"><StackedChart /></div>
+         {/* <div className="chart-card hover-transition"><RadarChartComp/></div>
+          <div className="chart-card hover-transition"><HeatmapChart /></div>
+          <div className="chart-card hover-transition"><treeMapChart /></div> */}
+
         </div>
 
         {/* Revenue Updates Section */}
         <div className="section-container revenue-section scroll-x">
           <h2 className="section-title">Revenue Updates</h2>
-
           <div className="revenue-card hover-transition">
-            <div className="revenue-header">
-              <p className="revenue-title">Revenue</p>
-              <div className="revenue-tags">
-                <p className="revenue-expense"><GoDotFill /> Expense</p>
-                <p className="revenue-budget"><GoDotFill /> Budget</p>
-              </div>
+          <div className="revenue-header">  
+            <p className="revenue-title">Monthly Earnings</p>
+            <div className="revenue-tags">
+              <p className="revenue-expense"><GoDotFill /> Total loss</p>
+              <p className="revenue-budget"><GoDotFill /> Budget</p>
+            </div>
+          </div>
+          <div className="revenue-amount">
+            <p className="amount">$63,448.78</p>
+            <p className="revenue-desc">Total earnings this month</p>
             </div>
           </div>
 
@@ -194,10 +217,11 @@ const Dashboard = () => {
     <div className="revenue-card hover-transition">
       <div className="revenue-header">
         <p className="revenue-title">loss amount</p>
-        <div className="revenue-tags">
+        <div className="revenue-amount">
           <p className="revenue-expense"><GoDotFill /> Total loss</p>
           <p className="revenue-budget"><GoDotFill /> Budget</p>
         </div>
+        
       </div>
       <div className="revenue-amount">
         <p className="amount">$168,345.67</p>
@@ -238,7 +262,7 @@ const Dashboard = () => {
           <div className="grid-card hover-transition"><h3>Refund Requests</h3><p>12 pending</p></div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

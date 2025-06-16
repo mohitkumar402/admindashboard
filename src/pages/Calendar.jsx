@@ -48,7 +48,10 @@ const Calendar = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
     >
-      <h1>Editable Calendar</h1>
+      <div className="headerh1">
+        <h1>Calendar</h1>
+      </div>
+      
       <div className="calendar-container">
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}

@@ -1,21 +1,32 @@
 .sidebar {
-  width: 250px;
-  background-color: #ffffff; /* ✅ Changed background from blue to white */
-  color: rgb(219, 211, 211);
+  
+  width: 190px;
+  min-width: 150px;
   height: 100vh;
-  padding: 1rem;
+  padding: 20px;
   position: fixed;
+  left: 0;
+  top: px; /* Adjusted to account for header height */
+  background-color: #fecdfe;
+  color: liner-gradient(90deg, #f8b3f3, #f8b3f3);
+  
+  padding: 1.2rem;
+  z-index: 100;
   transition: width 0.3s ease;
-  overflow-y: auto;       /* ✅ Scroll only vertically */
-  overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: #999 #e9ebed;
-  scroll-behavior: smooth; /* ✅ Smooth scrolling */
+  overflow-y: auto;
+}
+.sidebar-header {
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #67d40d);
+  color: white;
+  -webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+transition: transform 0.3s ease;
+
 }
 
-.sidebar.collapsed {
-  width: 70px;
-}
+
+
+
 
 /* Scrollbar styling for Webkit (Chrome, Edge, Safari) */
 .sidebar::-webkit-scrollbar {
@@ -51,7 +62,8 @@
 }
 
 .sidebar-section {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 .sidebar-section h4 {

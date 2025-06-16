@@ -1,0 +1,39 @@
+.card {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
+.recharts-cartesian-grid line {
+  stroke: #ddd;
+  stroke-dasharray: 3 3;
+}
+
+.recharts-tooltip-wrapper {
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.recharts-line {
+  stroke-width: 3;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 20px 10px;
+  }
+}

@@ -29,25 +29,15 @@ export default function Header() {
     >
       <div className="header-inner">
         <h1 className="header-title">
-          <Link to="/" className="gradient-text">Admin Dashboard</Link>
+          
           <div className="hover-underline"></div>
         </h1>
 
         <nav className="nav-links">
           <Link to="/">Home</Link>
-          <Link to="/notifications">Notifications</Link>
+          <Link to="/Notifications">Notifications</Link>
           <Link to="/calendar">Calendar</Link>
-
-          <div className="dropdown-container">
-            <button className="dropdown-toggle" onClick={toggleDropdown}>
-              <FaUser /> Account
-            </button>
-            {dropdownOpen && (
-              <div className="dropdown-menu">
-                <Link to="/account">Profile</Link>
-              </div>
-            )}
-          </div>
+          <Link to="/Profile">Profile</Link>
 
         </nav>
       </div>

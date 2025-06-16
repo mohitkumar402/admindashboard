@@ -1,33 +1,24 @@
 import React from 'react';
-import { PyramidChart as SyncPyramidChart, Inject, PyramidSeries, SeriesCollectionDirective, SeriesDirective, Tooltip, Legend } from '@syncfusion/ej2-react-charts';
+import FunnelChart from 'react-funnel-chart';
 
 const data = [
-  { x: 'Website', y: 120 },
-  { x: 'Email', y: 100 },
-  { x: 'Referral', y: 60 },
-  { x: 'Social', y: 80 },
+  ['Website', 120],
+  ['Email', 100],
+  ['Referral', 60],
+  ['Social', 80],
+  ['Direct', 40],
+  ['Other', 20]
 ];
 
-const PyramidChartComp = () => (
+const FunnelChartComponent = () => (
   <div className="card">
-    <h3>Pyramid Chart</h3>
-    <SyncPyramidChart tooltip={{ enable: true }}>
-      <Inject services={[PyramidSeries, Tooltip, Legend]} />
-      <SeriesCollectionDirective>
-        <SeriesDirective
-          dataSource={data}
-          xName="x"
-          yName="y"
-          type="Pyramid"
-          width="45%"
-          height="80%"
-          neckWidth="15%"
-          gapRatio={0.03}
-          explode
-        />
-      </SeriesCollectionDirective>
-    </SyncPyramidChart>
+    <h3>Funnel Chart</h3>
+    <FunnelChart
+      data={data}
+      colors={['#ff6a00', '#ee0979', '#67d40d', '#17ead9', '#6078ea']}
+      height={400}
+    />
   </div>
 );
 
-export default PyramidChartComp;
+export default FunnelChartComponent;

@@ -1,0 +1,120 @@
+.account-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f493d7;
+  color: #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.account-title {
+  font-size: 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #ff6a00, #ee0979, #8b06bb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.profile-card {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  flex-direction: column;
+  gap: 30px;
+}
+
+.avatar-section {
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #8b06bb;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+.field input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.field input:disabled {
+  opacity: 0.5;
+}
+
+.field input:focus {
+  box-shadow: 0 0 6px #8b06bb;
+}
+
+.disabled-text {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn {
+  background: linear-gradient(to right, #ff6a00, #8b06bb);
+  color: #fff;
+}
+
+.save-btn {
+  background: #04aa6d;
+  color: white;
+}
+
+.cancel-btn {
+  background: #a70000;
+  color: white;
+}
+
+.edit-btn:hover,
+.save-btn:hover,
+.cancel-btn:hover {
+  transform: scale(1.05);
+}

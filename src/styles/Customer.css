@@ -1,0 +1,115 @@
+.customer-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 60px 230px;
+  background-color: #f9f9f9;
+}
+
+/* Search Bar Styling */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 70%;
+  max-width: 600px;
+  padding: 8px 12px;
+  border-radius: 40px;
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
+}
+
+/* Export and Add Customer in One Row */
+.export-add-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 0px;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.add-customer-form {
+  display: flex;
+  padding: 40px;
+  gap: 8px;
+
+  align-items: center;
+
+}
+
+.add-customer-form input,
+.add-customer-form select {
+  padding: 8px 12px;
+  border-radius: 40px;
+  border: 1px solid #ccc;
+}
+
+.add-customer-form button {
+  white-space: nowrap;
+}
+
+/* Tables Styling */
+.customer-table,
+.orders-table,
+.extra-table {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+  border-left: 4px solid #1976d2;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.customer-table table,
+.orders-table table,
+.extra-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table .MuiTableCell-head,
+.orders-table .MuiTableCell-head,
+.extra-table .MuiTableCell-head {
+  background-color: #1976d2;
+  color: #fff;
+  font-weight: bold;
+}
+
+.extra-table .MuiTableCell-head {
+  background-color: #4caf50;
+}
+
+.extra-table {
+  border-left-color: #4caf50;
+}
+
+.customer-page .MuiTabs-flexContainer {
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-input {
+    width: 80%;
+  }
+  
+  .export-add-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-customer-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

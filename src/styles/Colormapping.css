@@ -1,0 +1,82 @@
+.color-mapping-page {
+  width: 100%;
+  max-width: 4000px;
+  margin: auto;
+  padding: 40px 20px 80px 230px; /* adjust for sidebar */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.add-mapping-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fafafa;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.color-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.color-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.color-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.color-name {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+}
+
+.color-picker {
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  margin-left: 4px;
+}
+
+.save-btn {
+  align-self: flex-end;
+  margin-top: 10px;
+  background-color: #1976d2;
+  color: #fff;
+}
+.save-btn:hover {
+  background-color: #0d47a1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .color-mapping-page {
+    padding: 20px 10px;
+  }
+}

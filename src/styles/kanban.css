@@ -1,26 +1,27 @@
 .kanban-container {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(120deg, #f8f9fa, #dde4f3);
+  background: linear-gradient(120deg, #f8f9fa, #2c5cc4);
   display: flex;
-  margin-top: 130px; /* Adjusted for header height */
   flex-direction: column;
-  padding: 1.9rem;
-  overflow: hidden;
+  padding: 0 0 0 230px;
+  overflow-x: hidden;  /* ✅ Removes X scrollbar */
+  overflow-y: auto;    /* ✅ Allows vertical scrolling if needed */
 }
 
 .kanban-title {
-  text-align: center;
   font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  color: #333 ,#4f46e5; ;
+  margin: 1rem 0;
+  padding-left: 13px;
+  color: #4f46e5;
+  font-weight: bold;
 }
 
 .kanban-board {
   display: flex;
   gap: 2.5rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
+  flex-wrap: wrap;          /* ✅ Wraps columns if they overflow */
+  padding: 1rem;
 }
 
 .kanban-column {
@@ -29,7 +30,7 @@
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  display: relative;
+  display: flex;
   flex-direction: column;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -94,7 +95,7 @@
   background: #fff;
   padding: 2rem;
   border-radius: 10px;
-  width: 300px;
+  width: 320px;
   display: flex;
   flex-direction: column;
 }
@@ -129,4 +130,9 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
+}
+
+/* ✅ Remove horizontal scrollbar for entire page if any */
+body {
+  overflow-x: hidden;
 }

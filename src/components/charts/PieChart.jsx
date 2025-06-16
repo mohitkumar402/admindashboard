@@ -4,6 +4,9 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 const data = [
   { name: 'A', value: 30 },
   { name: 'B', value: 70 },
+  { name: 'C', value: 50 },
+  { name: 'D', value: 20 },
+  { name: 'E', value: 40 }
 ];
 
 const COLORS = ['#0088FE', '#00C49F'];

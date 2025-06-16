@@ -1,0 +1,87 @@
+
+
+.notifications-page {
+  width: 100%;
+  max-width: 4000px;
+  margin: auto;
+  padding: 40px 20px 80px 230px; /* adjust for sidebar */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.notification-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notification-card:hover {
+  background-color: #f9f9f9;
+}
+
+.notification-card.read {
+  opacity: 0.6;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notification-text {
+  font-size: 16px;
+  color: #333;
+}
+
+.chip {
+  font-weight: bold;
+}
+
+.mark-all {
+  align-self: flex-end;
+  margin-top: 10px;
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+.mark-all:hover {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+/* Blinking effect for important notifications */
+.important-blink {
+  animation: blink 1s infinite;
+  border: 2px solid #d71e1e;
+}
+
+@keyframes blink {
+  0%, 100% { background-color: #fff; }
+  50% { background-color: rgba(215, 30, 30, 0.1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .notifications-page {
+    padding: 20px 10px;
+  }
+}
